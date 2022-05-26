@@ -1,4 +1,7 @@
 # 1)Escribe un programa muestre por pantalla “Hello World”.
+from ast import Break
+
+'''
 print("Hola Mundo")
 
 # 2) Escribe un programa que escriba en la pantalla el resultado de sumar 3 + 5.
@@ -46,14 +49,51 @@ else:
 
 
 #8) Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro)
-
 #CASE?
+
+numero = float(input("Ingrese un numero para verificar si es divisible por 2,3,5 o 7): "))
+if (numero%2 ==0):
+    print("El numero es divisible por 2.")
+    Break
+elif(numero%3 ==0 ):
+    print("El numero no es divisible por 3.")
+    Break
+elif(numero%5==0):
+    print("El numero es divisible por 5.")
+    Break
+elif(numero%7==0):
+    print("El numero es divisibl por 7.")
+    Break
+else:
+    print("El numero no es divisible por 2 3 5 ni 7")
+
+ 
+
+# 9) Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
+
+numero = float(input("Ingrese un numero para verificar si es divisible por 2,3,5 o 7): "))
+if (numero%2 ==0):
+    print("El numero es divisible por 2.")
+if(numero%3 ==0 ):
+    print("El numero no es divisible por 3.")
+if(numero%5==0):
+    print("El numero es divisible por 5.")
+if(numero%7==0):
+    print("El numero es divisibl por 7.")
 
 
 '''
 
-9) Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible)
-10) Escribir un programa que escriba en pantalla los divisores de un número dado
+# 10) Escribir un programa que escriba en pantalla los divisores de un número dado
+numero = int(input("Ingrese un numero para visualizar los divisores del mismo: "))
+for i in range(2,(int((numero)/2)+1),1):
+    if(numero%i==0):
+        print("Divisible por: ",i)
+    
+
+
+'''
+
 11) Escribir un programa que nos diga si un número dado es primo (no es divisible por ninguno otro número que no sea él mismo o la unidad)
 12) Pide una nota (número). Muestra la calificación según la nota:
  0-3: Muy deficiente
