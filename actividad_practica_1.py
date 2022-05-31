@@ -2,7 +2,7 @@
 from ast import Break
 from inspect import isclass
 
-'''
+
 print("Hola Mundo")
 
 # 2) Escribe un programa que escriba en la pantalla el resultado de sumar 3 + 5.
@@ -158,7 +158,7 @@ for i in range(6,0,-1):
 
 
 
-
+'''
 15) Crear un programa que escriba los números del 1 al 500, y que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo:
 1
 2
