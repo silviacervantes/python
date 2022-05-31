@@ -1,5 +1,6 @@
 # 1)Escribe un programa muestre por pantalla “Hello World”.
 from ast import Break
+from inspect import isclass
 
 '''
 print("Hola Mundo")
@@ -82,7 +83,6 @@ if(numero%7==0):
     print("El numero es divisibl por 7.")
 
 
-'''
 
 # 10) Escribir un programa que escriba en pantalla los divisores de un número dado
 numero = int(input("Ingrese un numero para visualizar los divisores del mismo: "))
@@ -92,31 +92,73 @@ for i in range(2,(int((numero)/2)+1),1):
     
 
 
-'''
+# 11) Escribir un programa que nos diga si un número dado es primo (no es divisible por ninguno otro número que no sea él mismo o la unidad)
 
-11) Escribir un programa que nos diga si un número dado es primo (no es divisible por ninguno otro número que no sea él mismo o la unidad)
-12) Pide una nota (número). Muestra la calificación según la nota:
- 0-3: Muy deficiente
- 3-5: Insuficiente
- 5-6: Suficiente
- 6-7: Bien
- 7-9: Notable
- 9-10: Sobresaliente
-13) Realiza un programa que escriba una pirámide del 1 al 30 de la siguiente forma:
-1
-22
-333
-4444
-55555
-666666
-……….
-14) Haz un programa que escriba una pirámide inversa de los números del 1 al número que indique el usuario de la siguiente forma (suponiendo que indica 6):
-666666
-55555
-4444
-333
-22
-1
+numero = int(input("Ingrese un numero para visualizar los divisores del mismo: "))
+b = False 
+for i in range(2,(int((numero)/2)+1),1):
+    if(numero%i==0):
+        #print(i)
+        b = True
+if b == False: 
+    print(numero," Es Primo")
+else:
+    print(numero," No es primo")
+
+
+# 12) Pide una nota (número). Muestra la calificación según la nota:
+#  0-3: Muy deficiente
+#  3-5: Insuficiente
+#  5-6: Suficiente
+#  6-7: Bien
+#  7-9: Notable
+#  9-10: Sobresaliente
+
+nota = int(input("Ingrese una nota (0-10):"))
+if nota <= 3 and nota >= 0: print(nota,":Muy deficiente")
+elif nota <= 5 : print(nota,":Insuficiente")
+elif nota <= 6 : print(nota,":Suficiente")
+elif nota <= 7 : print(nota,":Bien")
+elif nota <= 9 : print(nota,":Notable")
+elif nota <= 10 : print(nota,":Sobresaliente")
+
+
+# 13) Realiza un programa que escriba una pirámide del 1 al 30 de la siguiente forma:
+# 1
+# 22
+# 333
+# 4444
+# 55555
+# 666666
+# ……….
+
+for i in range(0,31,1):
+    fila=''
+    for j in range(0,i,1):
+        fila = fila + str(i)
+    print(fila)
+
+
+
+# 14) Haz un programa que escriba una pirámide inversa de los números del 1 al número que indique el usuario de la siguiente forma (suponiendo que indica 6):
+# 666666
+# 55555
+# 4444
+# 333
+# 22
+# 1
+
+
+for i in range(6,0,-1):
+    fila=''
+    for j in range(0,i,1):
+        fila = fila + str(i)
+    print(fila)
+
+
+
+
+
 15) Crear un programa que escriba los números del 1 al 500, y que indique cuales son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo:
 1
 2
@@ -130,3 +172,9 @@ for i in range(2,(int((numero)/2)+1),1):
 9 (Múltiplo de 9)
 10
 '''
+for i in range(1,501,1):
+    if i%4 ==0 and i%9==0: print(i," (Multiplo de 4 y 9)")
+    elif i%4 ==0: print(i," (Multiplo de 4)")
+    elif i%9 == 0: print(i," (Multiplo de 9)")
+    else:print(i)
+    if i%5 ==0: print("------------------------------------------------------------")

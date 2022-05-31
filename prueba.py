@@ -2,6 +2,8 @@
 Prueba inicial
 '''
 print("Hola mundo");
+for i in range (20,0,-1):
+    print (i)
 
 ''' 
 Declaracion de variables
