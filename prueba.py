@@ -1,6 +1,17 @@
 '''
 Prueba inicial
 '''
+
+def suma_numeros(numeros): # Bloque 1
+    suma = 0 # Bloque 2
+    for n in numeros: # Bloque 2
+        suma += n # Bloque 3
+        print(suma) # Bloque 3
+    return suma # Bloque 2
+
+
+print("Suma de numeros",suma_numeros([3,4]))
+
 print("Hola mundo");
 for i in range (20,0,-1):
     print (i)
