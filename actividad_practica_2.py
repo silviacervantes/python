@@ -151,29 +151,22 @@ while j<=10:
         print(lista[longitud-1-j])
     j+=1
 
-'''
+
 # 8) Eliminar de una lista de palabras que se encuentren en una segunda lista. Imprimir la lista original, la lista de palabras a eliminar y la lista resultante.
-from turtle import clear
-
-
 listaA=['rojo','blanco','azul','verde','rosa','violeta','celeste','marron','negro','gris','naranja']
-listaB=['verde','naranja','azul']
+listaB=['verde','naranja','azul','coral']
 listaC=[]
-listaD=[]
 
-print("LISTA A: ",listaA)
-for i in range(0,len(listaB)-1,1):
+print("LISTA ORIGINAL:",listaA)
+for i in range(0,len(listaB),1):
     elemento = listaB[i]
-    if elemento in listaA:
-        listaC = listaC.append(elemento)
-        listaA = listaA.remove(elemento)
-    else:
-        listaD = listaD.append(elemento)
-print(listaC)
-print(listaD)
-print(listaA)
-
-
+    # Cntr+k+c
+    if elemento in listaA: 
+        listaC.append(listaB[i])
+        listaA.remove(listaB[i])
+print("PALABRAS A ELIMINAR:",listaC)
+print("LISTA RESULTADO:",listaA)
+'''
 # 9) Escribir una función que reciba una lista como parámetro y devuelva True si la lista está ordenada en forma ascendente o False en caso contrario. Por ejemplo, ordenada([1, 2, 3]) retorna True y ordenada(['b', 'a']) retorna False. Desarrollar además un programa para verificar el comportamiento de la función.
 # 10) Desarrollar una función que determine si una cadena de caracteres es capicúa, sin utilizar cadenas auxiliares ni rebanadas. Escribir además un programa que permita verificar su funcionamiento.
 # 11) Leer una cadena de caracteres e imprimirla centrada en pantalla. Suponer que la misma tiene 80 columnas.
