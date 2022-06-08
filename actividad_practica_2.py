@@ -226,13 +226,14 @@ print(fecha(tupla))
 
 '''
 # 13) Ingresar una frase desde el teclado y usar un conjunto para eliminar las palabras repetidas, dejando un solo ejemplar de cada una. Finalmente mostrar las palabras ordenadas según su longitud.
-
 frase = input("Ingrese una frase:")
-frase = frase.replace(" " ,"','")
-print(frase)
-conjunto = {frase}
-a = set(conjunto)
-print(a)
+palabras= frase.split()
+palabras.sort(key=len)
+conjunto = set()
+for i in range(len(palabras)-1):
+    conjunto.add(palabras[i])
+print("Contenido de el conjunto:",conjunto)
+print("Strin ordenada por longitud de palabras:",palabras)
 
 # 14) Desarrollar una función eliminar_claves() que reciba como parámetros un diccionario y una lista de claves. La función debe eliminar del diccionario todas las claves contenidas en la lista, devolviendo el diccionario modificado y un valor de verdad que indique si la operación fue exitosa. Desarrollar también un programa para verificar su comportamiento.
 
