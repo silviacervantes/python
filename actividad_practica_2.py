@@ -166,26 +166,73 @@ for i in range(0,len(listaB),1):
         listaA.remove(listaB[i])
 print("PALABRAS A ELIMINAR:",listaC)
 print("LISTA RESULTADO:",listaA)
-'''
-# 9) Escribir una función que reciba una lista como parámetro y devuelva True si la lista está ordenada en forma ascendente o False en caso contrario. Por ejemplo, ordenada([1, 2, 3]) retorna True y ordenada(['b', 'a']) retorna False. Desarrollar además un programa para verificar el comportamiento de la función.
 
-n=int(input("Ingrese cantidad de elementos"))
-# lista1 = []
-# lista2 = []
-# for i in range(0,n,1):
-#     lista1[i] = input("Elemento[",i,"]:")
-# lista2=lista1.sorted()
-# ordenada = lambda resultado: True if lista1 == lista2 else False
-# if ordenada: print("Esta ordenada.") 
-# else:print("Esta desordenada.")
+# 9) Escribir una función que reciba una lista como parámetro y devuelva True si la lista está ordenada en forma ascendente o False en caso contrario. Por ejemplo, ordenada([1, 2, 3]) retorna True y ordenada(['b', 'a']) retorna False. Desarrollar además un programa para verificar el comportamiento de la función.
+n=int(input("Ingrese cantidad de elementos: "))
+lista1 = []
+for i in range(0,n,1):
+    elemento = input("Elemento:")
+    lista1.append(elemento)
+ordenada = lambda resultado: 1 if lista1 == sorted(lista1) else 2
+if ordenada ==1: print("Esta ordenada.") 
+else:print(lista1,"Esta desordenada.")
 
 # 10) Desarrollar una función que determine si una cadena de caracteres es capicúa, sin utilizar cadenas auxiliares ni rebanadas. Escribir además un programa que permita verificar su funcionamiento.
+cadena = input("ingrese una cadena para determinar si es capicua:")
+def es_palindromo(cadena):
+    i=0
+    b=True
+    while i<= int(len(cadena)/2) and b ==True:
+        if(cadena[i] != cadena[len(cadena)-i-1]):
+            b=False
+        i+=1
+    return b
+
+resultado=es_palindromo(cadena)
+if(resultado):print("Es palindromo")
+else:print("NO es palindromo")
+
+
 
 # 11) Leer una cadena de caracteres e imprimirla centrada en pantalla. Suponer que la misma tiene 80 columnas.
+cadena = input("Ingrese una cadena de caracters (<80)")
+print(cadena.center(80,' '))
 
 # 12) Escribir una función que reciba como parámetro una tupla conteniendo una fecha (día,mes,año) y devuelva una cadena de caracteres con la misma fecha expresada en formato extendido. Por ejemplo, para (12, 10,17) devuelve “12 de Octubre de 2017”. Escribir también un programa para verificar su comportamiento.
 
+tupla = (17,5,81) #empaquetado
+def fecha(tupla):
+    dia,mes,anio = tupla #desempaquetado
+    dia=str(dia)
+    mes=str(mes)
+    anio=str(anio)
+    if mes == '1': mes_name='Enero'
+    elif mes == '2': mes_name='Febero'
+    elif mes == '3': mes_name='Marzo'
+    elif mes == '4': mes_name='Abril'
+    elif mes == '5': mes_name='Mayo'
+    elif mes == '6': mes_name='Junio'
+    elif mes == '7': mes_name='Julio'
+    elif mes == '8': mes_name='Agosto'
+    elif mes == '9': mes_name='Septiembre'
+    elif mes == '10': mes_name='Octubre'
+    elif mes == '11': mes_name='Noviembre'
+    elif mes == '12': mes_name='Diciembre'
+    else: mes_name = 'ERROR'
+    anio_name='20'+anio
+    return (dia+" de "+mes_name+" de "+anio_name)
+
+print(fecha(tupla))
+
+'''
 # 13) Ingresar una frase desde el teclado y usar un conjunto para eliminar las palabras repetidas, dejando un solo ejemplar de cada una. Finalmente mostrar las palabras ordenadas según su longitud.
+
+frase = input("Ingrese una frase:")
+frase = frase.replace(" " ,"','")
+print(frase)
+conjunto = {frase}
+a = set(conjunto)
+print(a)
 
 # 14) Desarrollar una función eliminar_claves() que reciba como parámetros un diccionario y una lista de claves. La función debe eliminar del diccionario todas las claves contenidas en la lista, devolviendo el diccionario modificado y un valor de verdad que indique si la operación fue exitosa. Desarrollar también un programa para verificar su comportamiento.
 
