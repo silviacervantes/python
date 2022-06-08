@@ -224,7 +224,7 @@ def fecha(tupla):
 
 print(fecha(tupla))
 
-'''
+
 # 13) Ingresar una frase desde el teclado y usar un conjunto para eliminar las palabras repetidas, dejando un solo ejemplar de cada una. Finalmente mostrar las palabras ordenadas según su longitud.
 frase = input("Ingrese una frase:")
 palabras= frase.split()
@@ -235,6 +235,29 @@ for i in range(len(palabras)-1):
 print("Contenido de el conjunto:",conjunto)
 print("Strin ordenada por longitud de palabras:",palabras)
 
-# 14) Desarrollar una función eliminar_claves() que reciba como parámetros un diccionario y una lista de claves. La función debe eliminar del diccionario todas las claves contenidas en la lista, devolviendo el diccionario modificado y un valor de verdad que indique si la operación fue exitosa. Desarrollar también un programa para verificar su comportamiento.
 
+# 14) Desarrollar una función eliminar_claves() que reciba como parámetros un diccionario y una lista de claves. La función debe eliminar del diccionario todas las claves contenidas en la lista, devolviendo el diccionario modificado y un valor de verdad que indique si la operación fue exitosa. Desarrollar también un programa para verificar su comportamiento.
+diccionario={1:'Javier',2:'Cristian',3:'Ruben',4:'George',5:'Daniel',6:'Juan',7:'Juan2',8:'Marcos',9:'Javier2'}
+indices = [2,6,3,8,1]
+print("Dicccionario completo:",diccionario)
+
+def eliminar_claves(diccionario, l_claves):
+    for i in range(len(indices)):
+        # print(indices[i])
+        diccionario.pop(indices[i])
+
+eliminar_claves(diccionario,indices)
+print("Diccionario luego de eliminar los elemenos de los indices:",diccionario)
+
+'''
 # 15) Escribir una función para eliminar una subcadena de una cadena de caracteres, a partir de una posición y cantidad de caracteres dados, devolviendo la cadena resultante. Escribir también un programa para verificar el comportamiento de la misma. Escribir una función utilizando rebanadas
+
+def del_subcadena(cadena,inicio,fin):
+    cadena = cadena[0:inicio]+cadena[fin:len(cadena)]
+    return cadena
+
+cadena=input("Ingrese una cadena:")
+inicio=int(input("Desde que caracter eliminar:"))
+fin=int(input("Hasta que caracter eliminar:"))
+resultado = del_subcadena(cadena,inicio,fin)
+print("La cadena quedo asi:",resultado)
