@@ -125,8 +125,8 @@ funcion2(cant_filas)
 
 # 5) Crear una función lambda que devuelva el cuadrado de un valor recibido cómo parámetro. Desarrollar además un programa para verificar el comportamiento de la función.
 cuadrado = lambda x:x*x
-nro = int(input("Ingrese un valor para obtener su cuadrado: "))
-print("El cuadrado es:",cuadrado(nro))
+nro = int(input("Ingrese un valor para obtener su cuadrado: ")) 
+print(f'El cuadrado de {nro} es:',cuadrado(nro))
 
 # 6) Crear una función lambda para comprobar si un número es par o impar. Desarrollar además un programa para verificar el comportamiento de la función.
 
@@ -173,9 +173,12 @@ lista1 = []
 for i in range(0,n,1):
     elemento = input("Elemento:")
     lista1.append(elemento)
-ordenada = lambda resultado: 1 if lista1 == sorted(lista1) else 2
-if ordenada ==1: print("Esta ordenada.") 
-else:print(lista1,"Esta desordenada.")
+lista2=[]
+lista2 = sorted(lista1)
+print(lista2)
+ordenada = lambda resultado: 1 if lista1 == lista2 else 2
+if ordenada ==1: print(f"f{lista1} Esta ordenada.") 
+else:print(f"{lista1} Esta desordenada.")
 
 # 10) Desarrollar una función que determine si una cadena de caracteres es capicúa, sin utilizar cadenas auxiliares ni rebanadas. Escribir además un programa que permita verificar su funcionamiento.
 cadena = input("ingrese una cadena para determinar si es capicua:")
@@ -189,8 +192,8 @@ def es_palindromo(cadena):
     return b
 
 resultado=es_palindromo(cadena)
-if(resultado):print("Es palindromo")
-else:print("NO es palindromo")
+if(resultado):print(f'{cadena} Es palindromo')
+else:print(f'{cadena} NO es palindromo')
 
 
 
@@ -249,7 +252,7 @@ def eliminar_claves(diccionario, l_claves):
 eliminar_claves(diccionario,indices)
 print("Diccionario luego de eliminar los elemenos de los indices:",diccionario)
 
-'''
+
 # 15) Escribir una función para eliminar una subcadena de una cadena de caracteres, a partir de una posición y cantidad de caracteres dados, devolviendo la cadena resultante. Escribir también un programa para verificar el comportamiento de la misma. Escribir una función utilizando rebanadas
 
 def del_subcadena(cadena,inicio,fin):
@@ -261,3 +264,4 @@ inicio=int(input("Desde que caracter eliminar:"))
 fin=int(input("Hasta que caracter eliminar:"))
 resultado = del_subcadena(cadena,inicio,fin)
 print("La cadena quedo asi:",resultado)
+'''
