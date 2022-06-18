@@ -13,11 +13,13 @@ def mayor_de_3(num1, num2,num3):
         bandera = False
     elif num2 > mayor: 
         mayor =num2
+        bandera=True
 
     if num3 == mayor: 
         bandera = False
     elif num3 > mayor: 
         mayor = num3
+        bandera=True
 
     if bandera: 
         return mayor
