@@ -2,7 +2,7 @@
 1) Crear la clase Persona con los métodos “set_nombre”, “set_edad”,
 “get_nombre”, “get_edad” y “print_persona”. Luego crear dos objetos del tipo
 Persona e imprimirlos por consola.
-'''
+
 class Persona:
     def set_nombre(self,nombre):
         self.nombre = nombre
@@ -27,10 +27,42 @@ persona2.set_edad('38')
 persona1.print_persona();
 persona2.print_persona();
 
-
         
-'''
+
 2) Agregarle a la clase anterior un constructor que reciba nombre y edad.
+'''
+
+from operator import truediv
+
+
+class Persona:
+    def set_nombre(self,nombre):
+        self.nombre = nombre
+    def set_edad(self,edad):
+        self.edad=edad
+    def get_nombre(self):
+        return self.nombre
+    def get_edad(self):
+        return self.edad
+    def print_persona(self):
+        print(self.nombre,' ',self.edad) 
+    def constructor(self,nombre,edad):
+        self.nombre = nombre
+        self.edad = edad
+    def es_mayor_de_edad(self):
+        if(self.edad > 18): 
+            return True
+        else: 
+            return False             
+    
+persona1=Persona()
+persona2=Persona()
+
+persona1.constructor('Juan Perez',2)
+persona1.print_persona()
+print(persona1.es_mayor_de_edad())
+
+'''
 3) Agregarle a la clase anterior un método “es_mayor_de_edad” que devuelva
 True o False.
 4) Agregarle un método “es_mayor_que” el cual recibe un objeto persona y
