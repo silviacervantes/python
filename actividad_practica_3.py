@@ -30,7 +30,7 @@ persona2.print_persona();
         
 
 2) Agregarle a la clase anterior un constructor que reciba nombre y edad.
-'''
+
 
 from operator import truediv
 
@@ -54,7 +54,9 @@ class Persona:
             return True
         else: 
             return False             
-    
+    def es_mayor_que(self,peronax):
+        if (self.edad > personax.edad):
+
 persona1=Persona()
 persona2=Persona()
 
@@ -62,7 +64,7 @@ persona1.constructor('Juan Perez',2)
 persona1.print_persona()
 print(persona1.es_mayor_de_edad())
 
-'''
+
 3) Agregarle a la clase anterior un método “es_mayor_de_edad” que devuelva
 True o False.
 4) Agregarle un método “es_mayor_que” el cual recibe un objeto persona y
