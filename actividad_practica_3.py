@@ -65,6 +65,7 @@ persona1.print_persona()
 print(persona1.es_mayor_de_edad())
 
 
+
 3) Agregarle a la clase anterior un método “es_mayor_de_edad” que devuelva
 True o False.
 4) Agregarle un método “es_mayor_que” el cual recibe un objeto persona y

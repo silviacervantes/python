@@ -254,7 +254,7 @@ def eliminar_claves(diccionario, l_claves):
 eliminar_claves(diccionario,indices)
 print("Diccionario luego de eliminar los elemenos de los indices:",diccionario)
 
-
+'''
 # 15) Escribir una función para eliminar una subcadena de una cadena de caracteres, a partir de una posición y cantidad de caracteres dados, devolviendo la cadena resultante. Escribir también un programa para verificar el comportamiento de la misma. Escribir una función utilizando rebanadas
 
 def del_subcadena(cadena,inicio,fin):
@@ -266,4 +266,4 @@ inicio=int(input("Desde que caracter eliminar:"))
 fin=int(input("Hasta que caracter eliminar:"))
 resultado = del_subcadena(cadena,inicio,fin)
 print("La cadena quedo asi:",resultado)
-'''
+
