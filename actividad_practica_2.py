@@ -168,7 +168,7 @@ for i in range(0,len(listaB),1):
         listaA.remove(listaB[i])
 print("PALABRAS A ELIMINAR:",listaC)
 print("LISTA RESULTADO:",listaA)
-
+'''
 # 9) Escribir una función que reciba una lista como parámetro y devuelva True si la lista está ordenada en forma ascendente o False en caso contrario. Por ejemplo, ordenada([1, 2, 3]) retorna True y ordenada(['b', 'a']) retorna False. Desarrollar además un programa para verificar el comportamiento de la función.
 n=int(input("Ingrese cantidad de elementos: "))
 lista1 = []
@@ -181,7 +181,7 @@ print(lista2)
 ordenada = lambda resultado: 1 if lista1 == lista2 else 2
 if ordenada ==1: print(f"f{lista1} Esta ordenada.") 
 else:print(f"{lista1} Esta desordenada.")
-
+'''
 # 10) Desarrollar una función que determine si una cadena de caracteres es capicúa, sin utilizar cadenas auxiliares ni rebanadas. Escribir además un programa que permita verificar su funcionamiento.
 cadena = input("ingrese una cadena para determinar si es capicua:")
 def es_palindromo(cadena):
