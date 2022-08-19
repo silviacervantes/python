@@ -1,6 +1,7 @@
 from flask import Flask 
 from flask import render_template #render de html(crear vista). Se crea una carpeta dentro de ser llamada templates.
-from flask import request 
+from flask import request
+from datetime import datetime
 from flaskext.mysql import MySQL
 
 
@@ -45,11 +46,18 @@ def store():
     nombre = request.form['nombre']
     correo = request.form['email']
     
+       
     imagen = request.files['imagen']
-    imagen.save('uploads/' + imagen.filename)
+    
+    now = datetime.now()
+    time = now.strftime('%Y%m%d%H%M%S')
+    
+    nombre_imagen = time+'_'+imagen.filename
+    
+    imagen.save('CRUD/uploads/'+nombre_imagen) # Ojo, toma la raiz del proyecto
      
     sql='INSERT INTO empleados(nombre,correo,foto) VALUES (%s,%s,%s)' #%s Hace un escape a mysql, lo interpreta como TEXTO 
-    values = (nombre,correo,imagen.filename) 
+    values = (nombre,correo,nombre_imagen) 
     
     cursor.execute(sql,values)
     
