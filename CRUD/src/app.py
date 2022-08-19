@@ -47,7 +47,7 @@ def store():
     
     imagen = request.files['imagen']
     imagen.save('uploads/' + imagen.filename)
-    
+     
     sql='INSERT INTO empleados(nombre,correo,foto) VALUES (%s,%s,%s)' #%s Hace un escape a mysql, lo interpreta como TEXTO 
     values = (nombre,correo,imagen.filename) 
     
