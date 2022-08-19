@@ -1,6 +1,6 @@
 from flask import Flask 
 from flask import render_template #render de html(crear vista). Se crea una carpeta dentro de ser llamada templates.
-from flask import request
+from flask import request, redirect, url_for 
 from datetime import datetime
 from flaskext.mysql import MySQL
 
@@ -22,14 +22,13 @@ def index():
     conn = mysql.connect()
     cursor = conn.cursor()
     
-    cursor.execute('SELECT * FROM empleados LIMIT 10')
-    empleados = cursor.fetchall() # Trae todos los registros de la tabla
+    cursor.execute('SELECT * FROM empleados')
+    empleado = cursor.fetchall() # Trae todos los registros de la tabla
     
-    print(empleados) # Muestra en la consola el resultado, (tupla de tuplas)
+    print(empleado) # Muestra en la consola el resultado, (tupla de tuplas)
     
-    #return 'HOLA MUNDO MODO DEBUG!'
     mensaje = 'Este es un mensaje'
-    return render_template('index.html',mensaje = mensaje)
+    return render_template('index.html',mensaje = mensaje, empleados = empleado)
 
 @app.route('/create',methods=['GET'])
 def create():
@@ -63,8 +62,8 @@ def store():
     
     conn.commit() #Cuando hago cambios en los datos de la BD
     
-    return "OK"
-    #return render_template('store.html')
+    #return redirect('/') #Redirecciona
+    return redirect(url_for('index')) # Coloco nombre de la funcion (/ es igual a index)
 
 # GET (obtiene informacion) 
 # POST(emvia registro x el formulario)
@@ -74,4 +73,6 @@ def store():
 # DELETE (avisar que voy a borrar un registro) ** PARA APIS
 
 if __name__ =='__main__':
-    app.run(debug=True) # El proyecto esta en modo debug - desarrollo (muestra los cambios sin reiniciar el servidor)
+    app.run(debug=True) 
+    # El proyecto esta en modo debug - desarrollo 
+    # (muestra los cambios sin reiniciar el servidor)
